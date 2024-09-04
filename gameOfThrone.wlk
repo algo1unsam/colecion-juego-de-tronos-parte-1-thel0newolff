@@ -1,10 +1,10 @@
 object daenerys{
     const property  artefactos = []
-    var cantMax = 1
+    var cantMax = 2
 
    
     method equip(objeto) {
-        if (artefactos.size()<= cantMax && !artefactos.contains(objeto)){
+        if (artefactos.size()< cantMax && !artefactos.contains(objeto)){
             artefactos.add(objeto)
       }
     }
