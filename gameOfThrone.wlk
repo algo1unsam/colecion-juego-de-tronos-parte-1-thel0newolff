@@ -22,7 +22,9 @@ object daenerys{
     
     method equipped()= artifact
       
-    method own()= artifact + dragonRock.stack()
+    method own()= self.artifact() + dragonRock.stack()
+
+    method youHave(item) = self.own().contains(item)
 
     method showRegistry()= registry
 

@@ -29,8 +29,8 @@ test "posesiones" {
 	
 	daenerys.equip(armor)
 	assert.equals([necklace, armor, sword], daenerys.own())
-    assert.that(daenerys.equipped(sword))
-	assert.notThat(daenerys.equipped(mBook))
+    assert.that(daenerys.youHave(sword))
+	assert.notThat(daenerys.youHave(mBook))
 	
 }
 
