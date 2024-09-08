@@ -1,11 +1,14 @@
+
 object daenerys{
-    const property  artefactos = []
+    const property  artifact = []
     var cantMax = 2
+    const property registry = [] 
 
    
     method equip(objeto) {
-        if (artefactos.size()< cantMax && !artefactos.contains(objeto)){
-            artefactos.add(objeto)
+        registry.add(objeto)
+        if (artifact.size()< cantMax){
+            artifact.add(objeto)
       }
     }
     method sumarcantMax(valor) {
@@ -14,38 +17,48 @@ object daenerys{
     method cantMax() = cantMax
 
     method save() {
-      rocaDragon.vaciar()
+      dragonRock.empty()
     }
     
-    method equipado()= artefactos
+    method equipped()= artifact
       
-    method posee()= artefactos + rocaDragon.stack()
+    method own()= artifact + dragonRock.stack()
 
-    method tiene(objeto)= artefactos.contains(objeto) || rocaDragon.stack.contains(objeto)  
-      
-    }
+    method showRegistry()= registry
+
+
+}
 
 object sword {
+  method name() = "Dragon Sword"
 }
 
 object mBook {
+  method name() = "Ancestral Magic Book" 
   
 }
 
 object necklace {
+  method name() = "Fire Necklace" 
   
 }
 
 object armor {
+  method name() = "Valyrian Armor" 
   
 }
 
-object rocaDragon {
+object dragonRock {
     const property stack = []
 
-    method vaciar() {
-        stack.addAll(daenerys.artefactos())
-        daenerys.artefactos().clear()
+    method agregarItem(objeto) {
+      stack.add(objeto)
+      
+    }
+
+    method empty() {
+        stack.addAll(daenerys.artifact())
+        daenerys.artifact().clear()
       }
   
 }
